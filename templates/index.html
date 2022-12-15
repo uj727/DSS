@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<head>
+  <title>刑事案件判決輔助支援系統</title>
+  <link rel="icon" type="image/x-icon" href="images/balance.png">
+</head> 
+<style type="text/css">
+.navbar {
+  background-color: black;
+}
+
+.sidebar {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: 1;
+  transition: 0.5s;
+  padding-top: 50px;
+  position: fixed;
+  overflow-x: hidden;
+  background-color: #DCDCDC;
+}
+
+.sidebar a {
+  color: black;
+  display: block;
+  font-size: 1em;
+  transition: 0.3s;
+  padding: 10px 10px 10px 10px;
+}
+
+.sidebar a:hover {
+  color: black;
+}
+
+.sidebar .closebtn {
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  margin-left: 50px;
+  position: absolute;
+}
+
+.openbtn {
+  font-size: 20px;
+  padding: 10px 15px;
+  color: white;
+  float: right;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+}
+
+.openbtn:hover {
+  background-color: black;
+}
+  
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  position: fixed;
+}
+</style>
+<script>
+  function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+  function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">刑事案件判決輔助支援系統</a>
+      </div>
+      <div id="main">
+      <ul class="nav navbar-nav navbar-right">
+        <button class="openbtn" onclick="openNav()">☰ </button>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">刑事</a>
+    <a href="#">民事</a>
+    <a href="#">行政</a>
+    <a href="#">訴訟</a>
+  </div>
+
+  <div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <form method="post" action="">
+      <div class="form-group">
+      <textarea id="area1" name="txt" rows="10" cols="40">{% if sentence %}{{ sentence }}{% endif %}</textarea>
+      <input type="submit">
+      <textarea id="area2" name="txt" rows="10" cols="40">{% if res %}{{ res }}{% endif %}</textarea>
+      </div>
+    </form>
+  </div>
+    <div class="col-md-2"></div>
+  </div>
+ 
+  <footer class="text-center" style="background-color: black;">
+    <p>Bootstrap Theme Made By</p> 
+  </footer>
+</body>
+</html>

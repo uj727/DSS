@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <title>index</title>
+</head>
+<body>
+  <form method="post" action="">
+    <p><label for="area">輸入英文句子:</label></p>
+    <!-- sentence是顯示上一次送出的句子 -->
+    <textarea id="area" name="txt" rows="6"
+     cols="40">{% if sentence %}{{ sentence }}{% endif %}</textarea>
+    <br>
+    <input type="submit" />
+  </form>
+  <!-- 輸出預測結果 -->
+  {% if res %}
+    <p>{{ res }}</p>
+  {% endif %}
+ 
+</body>
+</html>
+2
