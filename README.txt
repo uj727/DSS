@@ -1,15 +1,13 @@
-requirements:
-pip install flask
-pip install transformers
-pip install torch
-pip install openai
-pip install googletrans
+輔助判決-決策支援系統
+功能 輸入司法判決書給出判決
+資料集來源 司法部判決書_違反毒品危害防制條例
 
 使用方法：
-1. 執行main.py，等它執行起來(第一次跑會載模型，時間比較久)
+1. 執行main.py，等它執行起來
 2. 打開瀏覽器連到 http://127.0.0.1:5000/
 
-不使用就CTRL+C結束main.py
+CTRL+C可結束main.py
 
-模型：英文的情感分析
-
+目前問題 
+司法判決書長度過常要先處理，不確定哪段落比較重要
+判決過程沒有一定根據，原有模型中資料訓練以法律以美國為主
